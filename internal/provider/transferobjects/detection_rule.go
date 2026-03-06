@@ -94,6 +94,10 @@ type MetaItem struct {
 	KibanaSiemAppURL string `json:"kibana_siem_app_url,omitempty"`
 }
 
+type InvestigationFields struct {
+	FieldNames []string `json:"field_names,omitempty"`
+}
+
 type ExceptionListItem struct {
 	ID            string `json:"id,omitempty"`
 	ListID        string `json:"list_id,omitempty"`

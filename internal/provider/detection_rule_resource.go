@@ -107,6 +107,10 @@ func (r *DetectionRuleResource) Create(ctx context.Context, req resource.CreateR
 		itemsToRemove = append(itemsToRemove, "exceptions_list")
 	}
 
+	if len(body.InvestigationFields.FieldNames) == 0 {
+		itemsToRemove = append(itemsToRemove, "investigation_fields")
+	}
+
 	// Create via API
 	var response transferobjects.DetectionRuleResponse
 	if err := r.client.Post("/detection_engine/rules", body, &response, itemsToRemove); err != nil {
@@ -168,6 +172,10 @@ func (r *DetectionRuleResource) Read(ctx context.Context, req resource.ReadReque
 		itemsToRemove = append(itemsToRemove, "exceptions_list")
 	}
 
+	if len(response.DetectionRule.InvestigationFields.FieldNames) == 0 {
+		itemsToRemove = append(itemsToRemove, "investigation_fields")
+	}
+
 	// Both Timeline ID + Title attributes need to be specified
 	if (len(response.TimelineID) > 0 && len(response.TimelineTitle) == 0) ||
 		(len(response.TimelineTitle) > 0 && len(response.TimelineID) == 0) {
@@ -216,6 +224,10 @@ func (r *DetectionRuleResource) Update(ctx context.Context, req resource.UpdateR
 	// If exception_list: [] remove it
 	if len(body.ExceptionsList) == 0 {
 		itemsToRemove = append(itemsToRemove, "exceptions_list")
+	}
+
+	if len(body.InvestigationFields.FieldNames) == 0 {
+		itemsToRemove = append(itemsToRemove, "investigation_fields")
 	}
 
 	// Both Timeline ID + Title attributes need to be specified
