@@ -74,18 +74,6 @@ In order to run the full suite of Acceptance tests, run `make testacc`.
 make testacc
 ```
 
-## Notes
-
-**Update**
-
-Now supported:
-- `match` and `match_any` clause in exception items.
-- `wildcard` clause in exception items.
-
-## Usage
-
-You can find a recommended way to use this provider under the `./usage` directory.
-
 ## Credits
 
 Special thanks to [tsigouris007](https://github.com/tsigouris007/terraform-provider-elastic-siem-detection) for authoring the initial releases of this provider.
