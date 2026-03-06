@@ -6,7 +6,7 @@ This repository is a provider for [Elastic SIEM](https://www.elastic.co/security
 ## Requirements
 
 - [Terraform](https://www.terraform.io/downloads.html) >= 1.0
-- [Go](https://golang.org/doc/install) >= 1.18
+- [Go](https://golang.org/doc/install) >= 1.22
 
 ## Building The Provider
 
@@ -88,6 +88,4 @@ You can find a recommended way to use this provider under the `./usage` director
 
 ## Credits
 
-The original idea was taken from [https://github.com/fabiogermann/terraform-provider-elastic-siem](https://github.com/fabiogermann/terraform-provider-elastic-siem)
-
-Special thanks to [https://github.com/gpapakyriakopoulos](https://github.com/gpapakyriakopoulos) for the debugging sessions and emotional support.
+Special thanks to [tsigouris007](https://github.com/tsigouris007/terraform-provider-elastic-siem-detection) authoring the initial releases of this provider.
