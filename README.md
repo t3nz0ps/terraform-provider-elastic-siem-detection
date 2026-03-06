@@ -88,4 +88,4 @@ You can find a recommended way to use this provider under the `./usage` director
 
 ## Credits
 
-Special thanks to [tsigouris007](https://github.com/tsigouris007/terraform-provider-elastic-siem-detection) authoring the initial releases of this provider.
+Special thanks to [tsigouris007](https://github.com/tsigouris007/terraform-provider-elastic-siem-detection) for authoring the initial releases of this provider.
