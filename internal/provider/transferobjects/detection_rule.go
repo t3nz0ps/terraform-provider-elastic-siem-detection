@@ -122,6 +122,7 @@ type DetectionRule struct {
 	FalsePositives      []interface{}       `json:"false_positives,omitempty"`
 	Filters             []interface{}       `json:"filters,omitempty"`
 	From                string              `json:"from,omitempty"`
+	HistoryWindowStart  string              `json:"history_window_start,omitempty"`
 	ID                  string              `json:"id,omitempty"`
 	Immutable           *bool               `json:"immutable,omitempty"` // bool values need to be pointers to include false
 	Index               []string            `json:"index,omitempty"`
@@ -131,6 +132,7 @@ type DetectionRule struct {
 	MachineLeanJID      []string            `json:"machine_learning_job_id,omitempty"`
 	MaxSignals          int                 `json:"max_signals,omitempty"`
 	Name                string              `json:"name,omitempty"`
+	NewTermsFields      []string            `json:"new_terms_fields,omitempty"`
 	Note                string              `json:"note,omitempty"`
 	OutputIndex         string              `json:"output_index,omitempty"`
 	Query               string              `json:"query,omitempty"`
