@@ -1,17 +1,14 @@
 name: Rule to catch a hacker
 rule_id: hacker_rule
 description: This rule catches a hacker.
+enabled: true
 tags:
   - MyTag
 false_positives:
   - A user might not be a hacker
-investigation_fields:
-  field_names:
-    - hostname
 license: My License
 author:
   - John Doe
-enabled: true
 interval: 20m
 from: now-10m
 to: now

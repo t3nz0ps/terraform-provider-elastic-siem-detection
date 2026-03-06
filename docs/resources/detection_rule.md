@@ -12,21 +12,19 @@ Detection rule resource
 
 ### Rule YAML file (rule.yml)
 
+Rule sample
 ```yaml
 name: Rule to catch a hacker
 rule_id: hacker_rule
 description: This rule catches a hacker.
+enabled: true
 tags:
   - MyTag
 false_positives:
   - A user might not be a hacker
-investigation_fields:
-  field_names:
-    - hostname
 license: My License
 author:
   - John Doe
-enabled: true
 interval: 20m
 from: now-10m
 to: now
@@ -67,6 +65,33 @@ exceptions_list:
     id: <GENERATED_LIST_ID>
     namespace_type: single
     type: detection
+```
+
+Rule sample with type 'New Terms'
+```yaml
+name: Rule to catch a hacker (new_terms)
+rule_id: hacker_rule_terms
+description: This rule catches a hacker.
+enabled: false
+investigation_fields:
+  field_names:
+  - host.name
+  - user.name
+  - process.name
+interval: 60m
+from: now-63m
+to: now
+severity: low
+risk_score: 21
+max_signals: 100
+type: new_terms
+language: kuery
+index:
+  - myindex-*
+query: 'data_stream.namespace : "workstations" AND event.code: 1'
+new_terms_fields:
+  - process.name
+history_window_start: now-14d
 ```
 
 ### Terraform resource
