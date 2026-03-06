@@ -1,0 +1,15 @@
+item_id: hacker_item
+list_id: hacker_list
+name: Catch a hacker
+description: This item excepts the specified user from alerting.
+namespace_type: single
+tags:
+  - MyTag
+type: simple
+entries:
+  - field: user.name
+    operator: included
+    type: match_any
+    value:
+      - hacker
+expire_time: "2027-01-01T00:00:00.000Z"

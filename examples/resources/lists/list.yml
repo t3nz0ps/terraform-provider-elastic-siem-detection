@@ -1,0 +1,7 @@
+list_id: hacker_list
+name: Catch a hacker container
+description: Catch a hacker container.
+type: detection
+tags:
+  - MyTag
+namespace_type: single

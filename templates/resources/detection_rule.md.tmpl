@@ -1,0 +1,22 @@
+---
+page_title: "{{.Type}} {{.Name}} - {{.ProviderName}}"
+subcategory: ""
+description: |-
+  {{- if .Description }}{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}{{ end }}
+---
+
+# {{.Type}} {{.Name}}
+
+{{ if .Description }}{{ .Description | trimspace }}{{ end }}
+
+## Example Usage
+
+### Rule YAML file (rule.yml)
+
+{{ codefile "yaml" "examples/resources/rules/rule.yml" }}
+
+### Terraform resource
+
+{{ tffile "examples/resources/rules/resource.tf" }}
+
+{{ .SchemaMarkdown | trimspace }}

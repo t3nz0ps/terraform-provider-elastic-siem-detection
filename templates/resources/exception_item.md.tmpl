@@ -1,0 +1,22 @@
+---
+page_title: "{{.Type}} {{.Name}} - {{.ProviderName}}"
+subcategory: ""
+description: |-
+  {{- if .Description }}{{ .Description | plainmarkdown | trimspace | prefixlines "  " }}{{ end }}
+---
+
+# {{.Type}} {{.Name}}
+
+{{ if .Description }}{{ .Description | trimspace }}{{ end }}
+
+## Example Usage
+
+### Exception item YAML file (item.yml)
+
+{{ codefile "yaml" "examples/resources/items/item.yml" }}
+
+### Terraform resource
+
+{{ tffile "examples/resources/items/resource.tf" }}
+
+{{ .SchemaMarkdown | trimspace }}
