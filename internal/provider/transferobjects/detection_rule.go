@@ -131,6 +131,7 @@ type DetectionRule struct {
 	Immutable           *bool               `json:"immutable,omitempty"` // bool values need to be pointers to include false
 	Index               []string            `json:"index,omitempty"`
 	Interval            string              `json:"interval,omitempty"`
+	InvestigationFields InvestigationFields `json:"investigation_fields,omitempty"`
 	Language            string              `json:"language,omitempty"`
 	License             string              `json:"license,omitempty"`
 	MachineLeanJID      []string            `json:"machine_learning_job_id,omitempty"`
