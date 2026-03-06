@@ -46,33 +46,20 @@ If you wish to work on the provider, you'll first need [Go](http://www.golang.or
 
 To compile the provider, run `go install`. This will build the provider and put the provider binary in the `$GOPATH/bin` directory.
 
-To use it locally copy the compiled provider from `$GOPATH/bin/<COMPILED_PROVIDER>` to `/home/$USER/.terraform.d/plugins/local/elastic-siem-detection/elastic-siem-detection/1.0.0/linux_amd64/<COMPILED_PROVIDER>`.
-- Replace `local` with any path of your choice.
-- Replace 1st occurence of `elastic-siem-detection` with any path of your choice.
-- Replace 2nd occurence of `elastic-siem-detection` with any path of your choice.
-- Replace `1.0.0` with any version of your choice.
-- Replace `linux_amd64` with the corresponding OS platform.
-- Replace `<COMPILED_PROVIDER>` with the proper compiled binary name. Suggested to use `terraform-provider-elastic-siem-detection`.
-
-To use it in your terraform:
-```terraform
-terraform {
-  required_version = ">= 0.13.0"
-  required_providers {
-    elastic-siem-detection = {
-      source = "local/elastic-siem-detection/elastic-siem-detection"
-      version = "1.0.0"
-    }
+To use it locally, create a `.terraformrc` in your home directory:
+```sh
+cat > ~/.terraformrc <<EOF
+provider_installation {
+  dev_overrides {
+    "t3nz0ps/elastic-siem-detection" = "$(go env GOPATH)/bin"
   }
+  direct {}
 }
+EOF
 ```
 
 To generate or update documentation, run `go generate`.
-
 In order to run the full suite of Acceptance tests, run `make testacc`.
-```shell
-make testacc
-```
 
 ## Credits
 
